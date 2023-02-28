@@ -3,14 +3,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:viajesastales_app/screens/review.dart';
 
 class DescriptionPlaceScreen extends StatelessWidget {
-  const DescriptionPlaceScreen({Key? key}) : super(key: key);
+  final String namePlace;
+  final String descriptionPlace;
+  final int stars;
+
+  const DescriptionPlaceScreen({
+    Key? key, 
+    required this.namePlace, 
+    required this.descriptionPlace, 
+    required this.stars
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const TextStyle titleStyle =
-        TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-    const descriptionText =
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sollicitudin tempor id eu.';
+    const TextStyle titleStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);    
     final star = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
@@ -26,11 +32,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
-          child: const Text(
-            'Duwili Ella',
-            style: titleStyle,
-            textAlign: TextAlign.left,
-          ),
+          child: Text(namePlace, style: titleStyle, textAlign: TextAlign.left),
         ),
         star,
         star,
@@ -39,9 +41,12 @@ class DescriptionPlaceScreen extends StatelessWidget {
       ],
     );
     Container description = Container(
-      margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+      margin: const EdgeInsets.only(
+        top: 20.0, 
+        left: 20.0, 
+        right: 20.0),
       child: Text(
-        descriptionText,
+        descriptionPlace,
         style: GoogleFonts.lato(
           textStyle: const TextStyle(
             fontSize: 16,
