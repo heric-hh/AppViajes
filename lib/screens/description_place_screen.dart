@@ -17,6 +17,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const TextStyle titleStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);    
+    
     final star = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
@@ -58,7 +59,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
       children: [
         titleAndStars, 
         description,
-        const ReviewScreen(),
+         
       ],
     );
   }
