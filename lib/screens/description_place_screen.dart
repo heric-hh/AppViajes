@@ -58,8 +58,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
     return Column(
       children: [
         titleAndStars, 
-        description,
-         
+        description, 
       ],
     );
   }
