@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:viajesastales_app/screens/gradient_back.dart';
+import 'package:viajesastales_app/widgets/widgets.dart';
 
 class ProfileScreen extends StatelessWidget {
    
@@ -115,16 +116,39 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
+              //* Lugares para visitar
               Container(
-                child: Stack(
-                  children: [
-                    
+                margin: EdgeInsets.only(top: 280, left: 35),
+                child: ListView(
+                  children: const [ 
+                    place_details(),
+                    place_details(), 
                   ]
                 ),
               )
             ],
           ),
       ],
+    );
+  }
+}
+
+class place_details extends StatelessWidget {
+  const place_details({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: const [
+        CardImageDescription(
+          descripcionLugar: 'The safe and scenic Pikes Peak Highway', 
+          precioLugar: '\$5000', 
+          rutaImagen: 'assets/img/place2.jpg', 
+          tituloLugar: 'Pikes Peak Mountain',
+        ),
+      ]
     );
   }
 }
